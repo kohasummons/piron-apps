@@ -17,7 +17,7 @@ interface ComingSoonModalProps {
 export function ComingSoonModal({ open, onOpenChange }: ComingSoonModalProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-black border border-gray-800 text-white max-w-md mx-auto">
+      <DialogContent className="bg-black border border-gray-900 text-white max-w-md mx-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center mb-4">
             Coming Soon
@@ -32,16 +32,17 @@ export function ComingSoonModal({ open, onOpenChange }: ComingSoonModalProps) {
         </DialogHeader>
         <div className="space-y-6 text-center">
           <p className="text-gray-300 text-lg">
-            We're building the future of global bond markets.
+            We're building the global money market protocol.
           </p>
           <p className="text-gray-400">
-            The Piron app will be launching soon. Get ready to earn yield on
-            government bonds from anywhere in the world.
+            The Piron app will be launching soon. Get ready to earn transparent
+            yield on Treasury bills, Commercial Paper, and money market
+            instruments, onchain.
           </p>
           <div className="pt-4">
             <Button
               onClick={() => onOpenChange(false)}
-              className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white px-8 py-3 rounded-lg font-medium transition-all"
+              className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-black px-8 py-3 rounded-lg font-semibold transition-all"
             >
               Got it
             </Button>

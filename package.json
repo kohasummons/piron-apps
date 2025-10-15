@@ -13,9 +13,12 @@
     "clean": "turbo run clean"
   },
   "devDependencies": {
-    "turbo": "latest",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "turbo": "latest"
+  },
+  "dependencies": {
+    "framer-motion": "^12.23.24"
   }
 }

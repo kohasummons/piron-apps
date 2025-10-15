@@ -2,10 +2,17 @@
 
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export function WhyPironPools() {
   return (
-    <section className="bg-black text-white py-20 border-t border-gray-900 ">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6 }}
+      className="bg-black text-white py-20 mt-16 "
+    >
       <div className="max-w-7xl mx-auto px-8">
         <div className="text-center mb-14">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
@@ -165,6 +172,6 @@ export function WhyPironPools() {
           <div className="mt-8" />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

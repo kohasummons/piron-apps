@@ -45,8 +45,13 @@ const investments = [
 
 export default function InvestmentNetwork() {
   return (
-    <section className="relative bg-black text-white py-24 overflow-hidden">
-      {/* Section Header */}
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6 }}
+      className="relative bg-black text-white py-24 overflow-hidden"
+    >
       <div className="max-w-5xl mx-auto text-center mb-24 px-6">
         <h2 className="text-3xl md:text-5xl font-ultra-modern tracking-tight mb-4">
           Your Gateway to Fixed-Income Yield
@@ -57,7 +62,6 @@ export default function InvestmentNetwork() {
         </p>
       </div>
 
-      {/* Nodes */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 relative">
         {investments.map((inv, i) => {
           const Icon = inv.icon;
@@ -86,6 +90,6 @@ export default function InvestmentNetwork() {
           );
         })}
       </div>
-    </section>
+    </motion.section>
   );
 }

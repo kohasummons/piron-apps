@@ -8,15 +8,15 @@ import Link from "next/link";
 const navItems = [
   {
     name: "How it works",
-    href: "#how",
+    href: "/how-it-works",
   },
   {
-    name: "Markets",
-    href: "#markets",
+    name: "Blog",
+    href: "https://mirror.xyz/0x6b202588c79A5cA7D49B09f0Df55dc368bEE777e",
   },
   {
     name: "Docs",
-    href: "#docs",
+    href: "https://piron.gitbook.io/piron",
   },
 ];
 
@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <nav className="sticky top-0 mx-36 py-4 z-50 bg-black/98 backdrop-blur-sm border-b border-gray-900/50 ">
       <div className="flex justify-between">
-        <div className="flex items-center space-x-1">
+        <Link href="/" className="flex items-center space-x-1">
           <Image
             src="/pironLogo.png"
             alt="Piron"
@@ -34,13 +34,14 @@ const Header = () => {
             className="w-10 h-10"
           />
           <span className="text-lg font-modern text-white">Piron Finance</span>
-        </div>
+        </Link>
 
         <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
+              target="_blank"
               className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
             >
               {item.name}
