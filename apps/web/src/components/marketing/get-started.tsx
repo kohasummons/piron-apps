@@ -2,13 +2,20 @@
 
 import { useState } from "react";
 import { ComingSoonModal } from "./coming-soon-modal";
+import { motion } from "framer-motion";
 
 export function GetStarted() {
   const [showComingSoon, setShowComingSoon] = useState(false);
 
   return (
     <>
-      <section className="bg-black py-20">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+        className="bg-black py-20"
+      >
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-ultra-modern text-white mb-4">
@@ -34,7 +41,7 @@ export function GetStarted() {
             </button>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       <ComingSoonModal open={showComingSoon} onOpenChange={setShowComingSoon} />
     </>
